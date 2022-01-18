@@ -2,6 +2,8 @@
 ** LaTeX Config
 #+BEGIN_SRC emacs-lisp :exports none :results none :eval always
   (setq org-latex-logfiles-extensions (quote ("lof" "lot" "tex~" "aux" "idx" "log" "out" "toc" "nav" "snm" "vrb" "dvi" "fdb_latexmk" "blg" "brf" "fls" "entoc" "ps" "spl" "bbl" "xmpi" "run.xml" "bcf")))
+  (setq org-latex-pdf-process (list
+   "latexmk -pdflatex='lualatex -shell-escape -interaction nonstopmode' -pdf -f  %f"))
   (add-to-list 'org-latex-classes
                '("altacv" "\\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
 
@@ -50,11 +52,15 @@
 #+LATEX_CLASS: altacv
 #+LATEX_HEADER: \columnratio{0.6} % Set the left/right column width ratio to 6:4.
 #+LATEX_HEADER: \usepackage[bottom]{footmisc}
+*** Bibliography
+# #+LATEX_HEADER: \usepackage[backend=biber,style=apa,sorting=none,natbib=true]{biblatex}
+#+LATEX_HEADER: \usepackage[style=trad-abbrv,sorting=none,sortcites=true,doi=false,url=true,giveninits=true,hyperref]{biblatex}
+#+LATEX_HEADER: \addbibresource{davis.bib}
 ** Exporter Settings
 #+AUTHOR: Davis Schenkenberger
 #+EXPORT_FILE_NAME: ./schenkenberger-resume.pdf
 #+OPTIONS: toc:nil title:nil H:1
-** Macros
+** Macros 
 #+MACRO: cvevent \cvevent{$1}{$2}{$3}{$4}
 #+MACRO: cvachievement \cvachievement{$1}{$2}{$3}{$4}
 #+MACRO: cvtag \cvtag{$1}
@@ -85,12 +91,14 @@
 #+begin_export latex
 \begin{paracol}{2}
 #+end_export
+
 ** Personal Statement :ignore:
 #+begin_export latex
 \begin{quote}
- ``I am a student studying Computer Science at Colorado State Univeristy, I have passion for Software Development especially embedded systems and backend services. I have lots of experience working on open source projects and leading teams of developers to achieve a goal.''
+ ``Student studying Computer Science at Colorado Science with an intrest in UAV technology and embedded systems. Experience with open-source contribution and working with a team of developers in academic, work and hobby settings.''
  \end{quote}
 #+end_export
+
 ** Experience
 *** Drone Technician :ignore:
 {{{cvevent(Drone Technician, Colorado State University,Jan 2021 -- Present, Fort Collins\, Colorado)}}}
@@ -100,27 +108,68 @@ As an employee of the CSU Drone Center I worked with a team of other students to
 {{{cvtag(Open Source Development)}}}
 {{{cvtag(Drone Hardware)}}}
 {{{cvtag(Ardupilot)}}}
-*** Fulfillment Associate :ignore:
+{{{divider}}}
+*** Fulfillment Associate :ignore:noexport:
 {{{cvevent(Fulfillment Associate, Amazon, Jun 2021 -- Sep 2021, Thorton\, Colorado)}}}
 
-*** Sortation Associate :ignore:
+{{{divider}}}
+*** Sortation Associate :ignore:noexport:
 {{{cvevent(Fulfillment Associate, Amazon, Jun 2021 -- Sep 2021, Thorton\, Colorado)}}}
 
-*** Head Lifeguard :ignore:
-{{{cvevent(Head Lifeguard, Amazon, Apr 2020 -- Aug 2020, Johnstown\, Colorado)}}}
+{{{divider}}}
+*** Head Lifeguard :ignore:noexport:
+{{{cvevent(Head Lifeguard, YMCA, Apr 2020 -- Aug 2020, Johnstown\, Colorado)}}}
+Worked to maintain patron well-being while managing a team of lifeguards and being responsible for maintaining the facility.  
 
-*** Carbon Valley Recreation Center :ignore:
-{{{cvevent(Lifeguard & Swim Instructor, Carbon Valley Recreation Center, Jul 2018 -- Mar 2020, Frederick\, Colorado)}}}
+{{{divider}}}
+*** Carbon Valley Recreation Center :ignore:noexport:
+{{{cvevent(Lifeguard \& Swim Instructor, Carbon Valley Recreation Center, Jul 2018 -- Mar 2020, Frederick\, Colorado)}}}
+
+{{{divider}}}
 
 ** Projects
 *** Ardupilot Lord Integration :ignore:
 {{{cvevent(Ardupilot Lord Integration, Colorado State University Drone Center, Jun 2021 -- Present, Fort Collins\, Colorado)}}}
-
-\faGithub [[https://github.com/ArduPilot/ardupilot/pull/18837][Lord Microstrain Integration PR]]
+- Integrating a LORD 3DM-CX5-45 with Ardupilot
+- Extensive testing using various flight platforms
+- Designing and building a quadcopter
+- \faGithub [[https://github.com/ArduPilot/ardupilot/pull/18837][Lord Microstrain Integration PR]]
 
 {{{cvtag(Embedded Technology)}}}
 {{{cvtag(Ardupilot)}}}
+
 {{{cvtag(Estimation Filter)}}}
+{{{cvtag(Serial Communication)}}}
+
+{{{cvtag(Integration Testing)}}}
+
+*** Project Euler :ignore:
+{{{par-div}}}
+{{{cvevent(Project Euler, Colorado State Universoty, Sep 2020 -- Present, Fort Collins\, Colorado)}}}
+- Project Euler solutions written in both Python and Rust
+- Custom framework to test, execute and benchmark solutions in Python
+- \faGithub [[https://github.com/davisschenk/project-euler-python][davisschenk/project-euler-python]] 
+- \faGithub [[https://github.com/davisschenk/project-euler-rust][davisschenk/project-euler-rust]] 
+
+
+{{{cvtag(Python)}}}
+{{{cvtag(Rust)}}}
+{{{cvtag(Project Euler)}}}
+
+*** New Page :ignore:
+{{{new-page}}}
+
+** Projects (Cont.) 
+*** Raspberry PI Leds :ignore:
+{{{par-div}}}
+{{{cvevent(Raspberry PI Leds, Colorado State University, Jun 2021 -- Present, Fort Collins\, Colorado)}}}
+- Custom application to run animations on a WS2812b LED strip from a Raspberry PI
+- LEDs are controlled using a REST API written in Rust running on the RPI
+- Frontend written in Flutter/Dart so it can be used as a mobile app or website
+- Custom PCB designed using KiCad
+- \faGithub [[https://github.com/davisschenk/rasp_leds][davisschenk/rasp-leds]] 
+- \faGithub [[https://github.com/davisschenk/rasp-leds-v2][davisschenk/rasp-leds-v2]] 
+
 * CV Column 2 :ignore:
 # Switch to the right column - will automatically move to the next page.
 #+begin_export latex
@@ -132,7 +181,9 @@ As an employee of the CSU Drone Center I worked with a team of other students to
 {{{cvtag(Rust)}}}
 {{{cvtag(C/C++)}}}
 {{{cvtag(Java)}}}
-{{{cvtag(Flutter & Dart)}}}
+
+{{{cvtag(Flutter \& Dart)}}}
+
 {{{divider}}}
 
 {{{cvtag(Docker)}}}
@@ -149,11 +200,20 @@ As an employee of the CSU Drone Center I worked with a team of other students to
 #+begin_export latex
 \cvref{Christopher Robertson}{Colorado State University Drone Center}{\href{mailto:christopher.robertson@colostate.edu}{christopher.robertson@colostate.edu}}
 #+end_export
+
+** Publications
+#+begin_export latex
+\nocite{*}
+\printbibliography[title={\printinfo{\faBook}{Academic}}]
+#+end_export
+** Achievements
+{{{cvachievement(\faCertificate, Part 107 Pilots License, FAA certified remote pilot)}}}
+
+{{{divider}}}
+
 * Back Matter :ignore:
 #+begin_export latex
 \end{paracol}
 \end{document}
 #+end_export
-
-
 
