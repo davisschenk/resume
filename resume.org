@@ -54,7 +54,13 @@
 #+LATEX_HEADER: \usepackage[bottom]{footmisc}
 *** Bibliography
 # #+LATEX_HEADER: \usepackage[backend=biber,style=apa,sorting=none,natbib=true]{biblatex}
-#+LATEX_HEADER: \usepackage[style=trad-abbrv,sorting=none,sortcites=true,doi=false,url=true,giveninits=true,hyperref]{biblatex}
+# #+LATEX_HEADER: \usepackage[style=trad-abbrv,sorting=none,sortcites=true,doi=false,url=true,giveninits=true,hyperref]{biblatex}
+#+LATEX_HEADER: \usepackage[backend=biber,style=apa6,sorting=ydnt]{biblatex}
+#+LATEX_HEADER: \defbibheading{pubtype}{\cvsubsection{#1}}
+#+LATEX_HEADER: \renewcommand{\bibsetup}{\vspace*{-\baselineskip}}
+#+LATEX_HEADER: \AtEveryBibitem{\makebox[\bibhang][l]{\itemmarker}}
+#+LATEX_HEADER: \setlength{\bibitemsep}{0.25\baselineskip}
+#+LATEX_HEADER: \setlength{\bibhang}{1.25em}
 #+LATEX_HEADER: \addbibresource{davis.bib}
 ** Exporter Settings
 #+AUTHOR: Davis Schenkenberger
@@ -88,17 +94,13 @@
 #+end_export
 
 * CV Column 1 :ignore:
-#+begin_export latex
-\begin{paracol}{2}
-#+end_export
-
+#+LATEX: \begin{paracol}{2}
 ** Personal Statement :ignore:
 #+begin_export latex
 \begin{quote}
- ``Student studying Computer Science at Colorado Science with an intrest in UAV technology and embedded systems. Experience with open-source contribution and working with a team of developers in academic, work and hobby settings.''
- \end{quote}
+ ``Student studying Computer Science at Colorado Science with an interest in UAV technology and embedded systems. Experience with open-source contribution and working with a team of developers in academic, work and hobby settings.''
+\end{quote}
 #+end_export
-
 ** Experience
 *** Drone Technician :ignore:
 {{{cvevent(Drone Technician, Colorado State University,Jan 2021 -- Present, Fort Collins\, Colorado)}}}
@@ -109,15 +111,12 @@ As an employee of the CSU Drone Center I worked with a team of other students to
 {{{cvtag(Drone Hardware)}}}
 {{{cvtag(Ardupilot)}}}
 {{{divider}}}
-*** Fulfillment Associate :ignore:noexport:
-{{{cvevent(Fulfillment Associate, Amazon, Jun 2021 -- Sep 2021, Thorton\, Colorado)}}}
+
+*** Amazon :ignore:
+{{{cvevent(Fulfillment/Sortation Associate, Nov 2020 -- Jan 2021 / Jun 2021 -- Sep 2021, Thorton\, Colorado)}}}
 
 {{{divider}}}
-*** Sortation Associate :ignore:noexport:
-{{{cvevent(Fulfillment Associate, Amazon, Jun 2021 -- Sep 2021, Thorton\, Colorado)}}}
-
-{{{divider}}}
-*** Head Lifeguard :ignore:noexport:
+*** Head Lifeguard :ignore:
 {{{cvevent(Head Lifeguard, YMCA, Apr 2020 -- Aug 2020, Johnstown\, Colorado)}}}
 Worked to maintain patron well-being while managing a team of lifeguards and being responsible for maintaining the facility.  
 
@@ -143,23 +142,10 @@ Worked to maintain patron well-being while managing a team of lifeguards and bei
 
 {{{cvtag(Integration Testing)}}}
 
-*** Project Euler :ignore:
-{{{par-div}}}
-{{{cvevent(Project Euler, Colorado State Universoty, Sep 2020 -- Present, Fort Collins\, Colorado)}}}
-- Project Euler solutions written in both Python and Rust
-- Custom framework to test, execute and benchmark solutions in Python
-- \faGithub [[https://github.com/davisschenk/project-euler-python][davisschenk/project-euler-python]] 
-- \faGithub [[https://github.com/davisschenk/project-euler-rust][davisschenk/project-euler-rust]] 
-
-
-{{{cvtag(Python)}}}
-{{{cvtag(Rust)}}}
-{{{cvtag(Project Euler)}}}
-
 *** New Page :ignore:
 {{{new-page}}}
 
-** Projects (Cont.) 
+** Projects (Cont.)
 *** Raspberry PI Leds :ignore:
 {{{par-div}}}
 {{{cvevent(Raspberry PI Leds, Colorado State University, Jun 2021 -- Present, Fort Collins\, Colorado)}}}
@@ -168,14 +154,25 @@ Worked to maintain patron well-being while managing a team of lifeguards and bei
 - Frontend written in Flutter/Dart so it can be used as a mobile app or website
 - Custom PCB designed using KiCad
 - \faGithub [[https://github.com/davisschenk/rasp_leds][davisschenk/rasp-leds]] 
-- \faGithub [[https://github.com/davisschenk/rasp-leds-v2][davisschenk/rasp-leds-v2]] 
+- \faGithub [[https://github.com/davisschenk/rasp-leds-v2][davisschenk/rasp-leds-v2]]
+*** Project Euler :ignore:
+{{{par-div}}}
+{{{cvevent(Project Euler, Colorado State Universoty, Sep 2020 -- Present, Fort Collins\, Colorado)}}}
+- Project Euler solutions written in both Python and Rust
+- Custom framework to test, execute and benchmark solutions in Python
+- \faGithub [[https://github.com/davisschenk/project-euler-python][davisschenk/project-euler-python]]
+- \faGithub [[https://github.com/davisschenk/project-euler-rust][davisschenk/project-euler-rust]]
+
+
+{{{cvtag(Python)}}}
+{{{cvtag(Rust)}}}
+{{{cvtag(Project Euler)}}}
 
 * CV Column 2 :ignore:
 # Switch to the right column - will automatically move to the next page.
 #+begin_export latex
 \switchcolumn
 #+end_export
-
 ** Skills
 {{{cvtag(Python)}}}
 {{{cvtag(Rust)}}}
@@ -195,17 +192,16 @@ Worked to maintain patron well-being while managing a team of lifeguards and bei
 {{{cvtag(Org-mode)}}}
 
 ** Education
-{{{cvevent(Bachelors in Computer Science, Colorado State Univeristy, Aug 2020 -- Present, Fort Collins\, Colorado)}}}
+{{{cvevent(Bachelors in Computer Science, Colorado State Univeristy, Aug 2020 -- May 2024, Fort Collins\, Colorado)}}}
 ** References
 #+begin_export latex
 \cvref{Christopher Robertson}{Colorado State University Drone Center}{\href{mailto:christopher.robertson@colostate.edu}{christopher.robertson@colostate.edu}}
 #+end_export
-
 ** Publications
 #+begin_export latex
-\nocite{*}
-\printbibliography[title={\printinfo{\faBook}{Academic}}]
+\nocite{*} \printbibliography[title={\printinfo{\faBook}{Academic}}]
 #+end_export
+
 ** Achievements
 {{{cvachievement(\faCertificate, Part 107 Pilots License, FAA certified remote pilot)}}}
 
@@ -216,4 +212,3 @@ Worked to maintain patron well-being while managing a team of lifeguards and bei
 \end{paracol}
 \end{document}
 #+end_export
-

@@ -1,0 +1,119 @@
+* Config/Preamble :noexport:
+** LaTeX Config
+#+BEGIN_SRC emacs-lisp :exports none :results none :eval always
+  (setq org-latex-logfiles-extensions (quote ("lof" "lot" "tex~" "aux" "idx" "log" "out" "toc" "nav" "snm" "vrb" "dvi" "fdb_latexmk" "blg" "brf" "fls" "entoc" "ps" "spl" "bbl" "xmpi" "run.xml" "bcf")))
+  (setq org-latex-pdf-process (list
+   "latexmk -pdflatex='lualatex -shell-escape -interaction nonstopmode' -pdf -f  %f"))
+  (add-to-list 'org-latex-classes
+               '("altacv" "\\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+
+  % Change the page layout if you need to
+  \\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+  % Use roboto and lato for fonts
+  \\renewcommand{\\familydefault}{\\sfdefault}
+
+  % Change the colours if you want to
+  \\definecolor{SlateGrey}{HTML}{2E2E2E}
+  \\definecolor{LightGrey}{HTML}{666666}
+  \\definecolor{DarkPastelRed}{HTML}{450808}
+  \\definecolor{PastelRed}{HTML}{8F0D0D}
+  \\definecolor{GoldenEarth}{HTML}{E7D192}
+  \\colorlet{name}{black}
+  \\colorlet{tagline}{PastelRed}
+  \\colorlet{heading}{DarkPastelRed}
+  \\colorlet{headingrule}{GoldenEarth}
+  \\colorlet{subheading}{PastelRed}
+  \\colorlet{accent}{PastelRed}
+  \\colorlet{emphasis}{SlateGrey}
+  \\colorlet{body}{LightGrey}
+
+  % Change some fonts, if necessary
+  \\renewcommand{\\namefont}{\\Huge\\rmfamily\\bfseries}
+  \\renewcommand{\\personalinfofont}{\\footnotesize}
+  \\renewcommand{\\cvsectionfont}{\\LARGE\\rmfamily\\bfseries}
+  \\renewcommand{\\cvsubsectionfont}{\\large\\bfseries}
+
+  % Change the bullets for itemize and rating marker
+  % for \cvskill if you want to
+  \\renewcommand{\\itemmarker}{{\\small\\textbullet}}
+  \\renewcommand{\\ratingmarker}{\\faCircle}
+  "
+
+                 ("\\cvsection{%s}" . "\\cvsection*{%s}")
+                 ("\\cvevent{%s}" . "\\cvevent*{%s}")))
+  (setq org-latex-packages-alist 'nil)
+  (setq org-latex-default-packages-alist
+        '(("rm" "roboto"  t)
+          ("defaultsans" "lato" t)
+          ("" "paracol" t)
+          ))
+#+END_SRC
+#+LATEX_CLASS: altacv
+#+LATEX_HEADER: \usepackage[bottom]{footmisc}
+#+LATEX_HEADER: \hyphenpenalty=100000
+** Exporter Settings
+#+AUTHOR: Davis Schenkenberger
+#+EXPORT_FILE_NAME: ./schenkenberger-cover-letter.pdf
+#+OPTIONS: toc:nil title:nil H:1
+** Macros 
+#+MACRO: cvevent \cvevent{$1}{$2}{$3}{$4}
+#+MACRO: cvachievement \cvachievement{$1}{$2}{$3}{$4}
+#+MACRO: cvtag \cvtag{$1}
+#+MACRO: divider \divider
+#+MACRO: par-div \par\divider
+#+MACRO: new-page \newpage
+* CV Header :ignore:
+** Photo & Tagline :ignore:
+#+begin_export latex
+\name{Davis Schenkenberger}
+\tagline{Software Developer Intern}
+#+end_export
+** Personal Info :ignore:
+#+begin_export latex
+\personalinfo{
+  \email{davisschenk@gmail.com}
+  \email{davis13@colostate.edu}
+  \phone{(970) 590-1219}
+  \github{davisschenk}
+  \linkedin{davis-schenkenberger-686a02157}
+  \mailaddress{775 W Lake St \#2309, Fort Collins, CO 80521 }
+}
+\makecvheader
+#+end_export
+* Content :ignore:
+\divider
+\color{black}
+
+** Header :ignore:
+\begin{tabular}{@{} l}
+Recruiter Name \\
+Hewlett Packard \\
+3390 E Harmony Rd \\
+Fort Collins, CO 80528
+\end{tabular}
+
+\bigskip
+
+Dear Hiring Manager:
+
+\bigskip
+
+I am writing to express my interest in working as a Software Developer Intern at Hewlett Packard, my previous experience in similar positions and passion for software development would make me an ideal candidate for this position. Hewlett Packard has an excellent reputation, and I believe this position would be an excellent opportunity for me to further my skills and gain more real world experience.
+
+\bigskip
+
+While working at the CSU Drone Center I have gained a wealth of real world experience and have been in charge of running a large software project for over a year. I have communicated with clients, written detailed proposals and worked with developers to contribute to open source software in addition to being the lead software developer. This experience has helped me develop into a more well rounded developer and professional.
+
+\bigskip
+
+I look forward to contacting you within a week to talk about the possibility of an interview. Should you have any questions before that time feel free to reach me via phone (970-590-1219) or via email (davis13@colostate.edu)
+
+\bigskip
+
+Davis Schenkenberger
+* Back Matter :ignore:
+#+begin_export latex
+\end{document}
+#+end_export
+
