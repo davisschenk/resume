@@ -95,16 +95,33 @@
 
 * CV Column 1 :ignore:
 #+LATEX: \begin{paracol}{2}
-** Personal Statement :ignore:
+** Personal Statement :ignore:noexport:
 #+begin_export latex
 \begin{quote}
  ``Student studying Computer Science at Colorado Science with an interest in UAV technology and embedded systems. Experience with open-source contribution and working with a team of developers in academic, work and hobby settings.''
 \end{quote}
 #+end_export
+** Personal Statement Esri :ignore:
+#+begin_export latex
+\begin{quote}
+ ``Student studying Computer Science with a minor in Geospatial Information Sciences at Colorado Science with an interest in UAV technology and Geospatial Analysis. Experience with open-source contribution and working with a team of developers in academic, work and hobby settings.''
+\end{quote}
+#+end_export
 ** Experience
+*** UAV Pilot :ignore:
+{{{cvevent(Drone Technician and UAV Pilot, Colorado State University,May 2022 -- Present, Fort Collins\, Colorado)}}}
+As a UAV Pilot at the CSU Drone Center I have helped develop hardware, software and fly UAVs for a variety of research projects at CSU. Throughout the summer I have helped track down methane emissions using a drone with a thermal camera, mapped numerous agricultural projects, and even helped develop a system for tracking birds during mating season in Nevada.
+
+{{{cvtag(Pix4D)}}}
+{{{cvtag(ArcGIS Pro)}}}
+{{{cvtag(QGis)}}}
+{{{cvtag(Wingtra One Gen II)}}}
+{{{cvtag(Phantom 4 RTK)}}}
+{{{divider}}}
+
 *** Drone Technician :ignore:
-{{{cvevent(Drone Technician, Colorado State University,Jan 2021 -- Present, Fort Collins\, Colorado)}}}
-As an employee of the CSU Drone Center I worked with a team of other students to help develop software that allows a high-end AHRS to be used with open source flight control software. This position initially began as an independent study, but after successfully creating a pitch and receiving funding turned into a payed position.
+{{{cvevent(Drone Technician, Colorado State University,Jan 2021 -- May 2022, Fort Collins\, Colorado)}}}
+As an employee of the CSU Drone Center I worked with a team of other students to help develop software that allows a high-end AHRS to be used with open source flight control software.
 
 {{{cvtag(C++)}}}
 {{{cvtag(Open Source Development)}}}
@@ -157,16 +174,19 @@ Worked to maintain patron well-being while managing a team of lifeguards and bei
 - \faGithub [[https://github.com/davisschenk/rasp-leds-v2][davisschenk/rasp-leds-v2]]
 *** Project Euler :ignore:
 {{{par-div}}}
-{{{cvevent(Project Euler, Colorado State Universoty, Sep 2020 -- Present, Fort Collins\, Colorado)}}}
+{{{cvevent(Project Euler, Colorado State University, Sep 2020 -- Present, Fort Collins\, Colorado)}}}
 - Project Euler solutions written in both Python and Rust
 - Custom framework to test, execute and benchmark solutions in Python
 - \faGithub [[https://github.com/davisschenk/project-euler-python][davisschenk/project-euler-python]]
 - \faGithub [[https://github.com/davisschenk/project-euler-rust][davisschenk/project-euler-rust]]
 
-
 {{{cvtag(Python)}}}
 {{{cvtag(Rust)}}}
 {{{cvtag(Project Euler)}}}
+*** Coal Basin Mine Emissions :ignore:
+{{{par-div}}}
+{{{cvevent(Coal Basin Methane Emissions Project, Colorado State University, July 2020, Fort Collins\, Colorado)}}}
+I spent a week living in Coal Basin assisting a professor and another research assistant locate methane leaks, each day we would hike a few miles into the basin where we would collect quantitative data on the known leaks and try and find other locations where methane could be escaping the mine. During this time I collected data for building models using a Phantom 4 RTK and we attempted to use an Autel Evo 640t to locate new leaks using the thermal camera.
 
 * CV Column 2 :ignore:
 # Switch to the right column - will automatically move to the next page.
@@ -191,6 +211,13 @@ Worked to maintain patron well-being while managing a team of lifeguards and bei
 {{{cvtag(LaTeX)}}}
 {{{cvtag(Org-mode)}}}
 
+{{{divider}}}
+
+{{{cvtag(ArcGIS)}}}
+{{{cvtag(QGIS)}}}
+{{{cvtag(Pix4D)}}}
+{{{cvtag(Geopandas, Pandas \& Numpy)}}}
+{{{cvtag(Google Earth Pro)}}}
 ** Education
 {{{cvevent(Bachelors in Computer Science, Colorado State Univeristy, Aug 2020 -- May 2024, Fort Collins\, Colorado)}}}
 ** References
