@@ -77,7 +77,7 @@
   \phone{(970) 590-1219}
   \github{davisschenk}
   \linkedin{davis-schenkenberger-686a02157}
-  \mailaddress{775 W Lake St \#2309, Fort Collins, CO 80521 }
+  \mailaddress{306 W. Laurel \#304, Fort Collins, CO 80521 }
 }
 \makecvheader
 #+end_export
@@ -87,10 +87,9 @@
 
 ** Header :ignore:
 \begin{tabular}{@{} l}
-Recruiter Name \\
-Hewlett Packard \\
-3390 E Harmony Rd \\
-Fort Collins, CO 80528
+Esri \\
+167 S Taylor Ave \\
+Louisviller, CO 80027
 \end{tabular}
 
 \bigskip
@@ -99,18 +98,19 @@ Dear Hiring Manager:
 
 \bigskip
 
-I am writing to express my interest in working as a Software Developer Intern at Hewlett Packard, my previous experience in similar positions and passion for software development would make me an ideal candidate for this position. Hewlett Packard has an excellent reputation, and I believe this position would be an excellent opportunity for me to further my skills and gain more real world experience.
+I am writing to express my interest in working as a Software Developer Intern at Esri, I believe that my passion for Computer Science and GIS make me a strong candidate for this position. I utilize Esri products such as ArcGIS Pro every day to help with a variety of research at Colorado State University and would be interested in helping to develop these kind of tools.
 
 \bigskip
 
-While working at the CSU Drone Center I have gained a wealth of real world experience and have been in charge of running a large software project for over a year. I have communicated with clients, written detailed proposals and worked with developers to contribute to open source software in addition to being the lead software developer. This experience has helped me develop into a more well rounded developer and professional.
+While working at the CSU Drone Center I have gained a wealth of real world experience and,` have been in charge of running a large software project for over a year. I have communicated with clients, written detailed proposals and, worked with developers to contribute to open source software in addition to being the lead software developer. This experience has helped me develop into a more well rounded developer and professional.
 
 \bigskip
 
-I look forward to contacting you within a week to talk about the possibility of an interview. Should you have any questions before that time feel free to reach me via phone (970-590-1219) or via email (davis13@colostate.edu)
+I am confident that my skills and experience make me a strong candidate for this position. I would love to meet you and share more about my previous experience, if you have any questions feel free to reach me via phone (970-590-1219) or email (davis13@colostate.edu)
 
 \bigskip
 
+Sincerely,
 Davis Schenkenberger
 * Back Matter :ignore:
 #+begin_export latex

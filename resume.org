@@ -8,7 +8,8 @@
                '("altacv" "\\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
 
   % Change the page layout if you need to
-  \\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+  \\geometry{left=1.0cm,right=1.0cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+  \\sloppy
 
   % Use roboto and lato for fonts
   \\renewcommand{\\familydefault}{\\sfdefault}
@@ -50,7 +51,7 @@
           ))
 #+END_SRC
 #+LATEX_CLASS: altacv
-#+LATEX_HEADER: \columnratio{0.6} % Set the left/right column width ratio to 6:4.
+#+LATEX_HEADER: \columnratio{0.55} % Set the left/right column width ratio to 6:4.
 #+LATEX_HEADER: \usepackage[bottom]{footmisc}
 *** Bibliography
 # #+LATEX_HEADER: \usepackage[backend=biber,style=apa,sorting=none,natbib=true]{biblatex}
@@ -110,38 +111,49 @@
 ** Experience
 *** UAV Pilot :ignore:
 {{{cvevent(Drone Technician and UAV Pilot, Colorado State University,May 2022 -- Present, Fort Collins\, Colorado)}}}
-As a UAV Pilot at the CSU Drone Center I have helped develop hardware, software and fly UAVs for a variety of research projects at CSU. Throughout the summer I have helped track down methane emissions using a drone with a thermal camera, mapped numerous agricultural projects, and even helped develop a system for tracking birds during mating season in Nevada.
+Helped with various projects ranging from agricultural research to tracking methane emissions at an abandoned coal mine. Automated various workflows helping to reduce the amount of manual labor and time spent sorting and processing data. Planned, piloted and maintained safety in numerous technical flight operations.
 
+\vspace{1em}
 {{{cvtag(Pix4D)}}}
 {{{cvtag(ArcGIS Pro)}}}
 {{{cvtag(QGis)}}}
 {{{cvtag(Wingtra One Gen II)}}}
+
 {{{cvtag(Phantom 4 RTK)}}}
+
 {{{divider}}}
 
 *** Drone Technician :ignore:
 {{{cvevent(Drone Technician, Colorado State University,Jan 2021 -- May 2022, Fort Collins\, Colorado)}}}
-As an employee of the CSU Drone Center I worked with a team of other students to help develop software that allows a high-end AHRS to be used with open source flight control software.
+Lead a team of students to integrate a highend AHRS sensor with open source flight control software Ardupilot running on a Pixhawk 4.
 
+\vspace{1em}
 {{{cvtag(C++)}}}
 {{{cvtag(Open Source Development)}}}
 {{{cvtag(Drone Hardware)}}}
+
 {{{cvtag(Ardupilot)}}}
+{{{cvtag(PixHawk4)}}}
+
 {{{divider}}}
 
 *** Amazon :ignore:
 {{{cvevent(Fulfillment/Sortation Associate, Nov 2020 -- Jan 2021 / Jun 2021 -- Sep 2021, Thorton\, Colorado)}}}
+# At Amazon I worked on a large team to help sort merchandise and packages to allow customers to receive orders in a timely matter.
 
 {{{divider}}}
 *** Head Lifeguard :ignore:
 {{{cvevent(Head Lifeguard, YMCA, Apr 2020 -- Aug 2020, Johnstown\, Colorado)}}}
-Worked to maintain patron well-being while managing a team of lifeguards and being responsible for maintaining the facility.  
+# Worked to maintain patron well-being while managing a team of lifeguards and being responsible for maintaining the facility.
 
 {{{divider}}}
-*** Carbon Valley Recreation Center :ignore:noexport:
+*** Carbon Valley Recreation Center :ignore:
 {{{cvevent(Lifeguard \& Swim Instructor, Carbon Valley Recreation Center, Jul 2018 -- Mar 2020, Frederick\, Colorado)}}}
 
 {{{divider}}}
+
+*** New Page :ignore:
+{{{new-page}}}
 
 ** Projects
 *** Ardupilot Lord Integration :ignore:
@@ -151,6 +163,7 @@ Worked to maintain patron well-being while managing a team of lifeguards and bei
 - Designing and building a quadcopter
 - \faGithub [[https://github.com/ArduPilot/ardupilot/pull/18837][Lord Microstrain Integration PR]]
 
+\vspace{1em}
 {{{cvtag(Embedded Technology)}}}
 {{{cvtag(Ardupilot)}}}
 
@@ -159,10 +172,6 @@ Worked to maintain patron well-being while managing a team of lifeguards and bei
 
 {{{cvtag(Integration Testing)}}}
 
-*** New Page :ignore:
-{{{new-page}}}
-
-** Projects (Cont.)
 *** Raspberry PI Leds :ignore:
 {{{par-div}}}
 {{{cvevent(Raspberry PI Leds, Colorado State University, Jun 2021 -- Present, Fort Collins\, Colorado)}}}
@@ -218,17 +227,17 @@ I spent a week living in Coal Basin assisting a professor and another research a
 {{{cvtag(Pix4D)}}}
 {{{cvtag(Geopandas, Pandas \& Numpy)}}}
 {{{cvtag(Google Earth Pro)}}}
+
 ** Education
-{{{cvevent(Bachelors in Computer Science, Colorado State Univeristy, Aug 2020 -- May 2024, Fort Collins\, Colorado)}}}
+{{{cvevent(Bachelors in Computer Science,Colorado State Univeristy,Aug 2020 -- May 2024,Fort Collins\, Colorado)}}}
 ** References
 #+begin_export latex
 \cvref{Christopher Robertson}{Colorado State University Drone Center}{\href{mailto:christopher.robertson@colostate.edu}{christopher.robertson@colostate.edu}}
 #+end_export
 ** Publications
 #+begin_export latex
-\nocite{*} \printbibliography[title={\printinfo{\faBook}{Academic}}]
+\nocite{*}\printbibliography[title={\printinfo{\faBook}{Academic}}]
 #+end_export
-
 ** Achievements
 {{{cvachievement(\faCertificate, Part 107 Pilots License, FAA certified remote pilot)}}}
 
