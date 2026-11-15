@@ -1,1 +1,3 @@
-*.xmpi
+/dist/
+/.venv/
+__pycache__/
