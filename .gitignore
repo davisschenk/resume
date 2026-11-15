@@ -1,1 +1,5 @@
-*.xmpi
+/dist/
+/.venv/
+__pycache__/
+/node_modules/
+/jobs/local/
