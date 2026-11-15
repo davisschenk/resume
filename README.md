@@ -46,6 +46,59 @@ ordering, excluded personal details, link annotations, metadata, minimum font
 size, and text bounds. It also writes extracted text and PNGs for visual review.
 It does not guarantee compatibility with every applicant tracking system.
 
+## ATS checks and job matching
+
+The optional ATS workflow uses [ATS Engine](https://github.com/VeriWorkly/ats-engine)
+0.22.0 (MIT), with a second PDF extraction engine independent of our PyMuPDF
+checks. It runs locally without an API key, AI provider, or resume upload. Installing
+dependencies requires access to npm; analysis of local files does not.
+
+Install Node.js 22.22.0 (recorded in `.nvmrc`), then:
+
+```sh
+npm ci --ignore-scripts
+just ats
+just match jobs/example.txt
+npm test
+```
+
+`just ats` builds both PDFs and writes `dist/ats/report.md`, per-document JSON
+reports, and extracted text. `just match` builds both PDFs and writes the same
+reports, with job matching, under `dist/match/`. Each successful run overwrites
+that mode's previous reports. `npm test` verifies the generated ATS and example
+match reports, including role dates and certification parsing; generate both
+reports with the commands above before running it.
+
+`jobs/example.txt` is an illustrative posting to exercise matching, not a real
+vacancy. For an actual application, save the posting as `.txt` or `.md` under
+`jobs/local/` (ignored by Git), then run:
+
+```sh
+just match jobs/local/automation-engineer.txt
+```
+
+Quote paths containing spaces. Without just, run `python3 scripts/build.py`, then
+`npm run ats` or `npm run match -- jobs/local/automation-engineer.txt`.
+Use `python` instead of `python3` where appropriate on Windows.
+
+Readiness and job-match scores are advisory heuristics, not scores from an
+employer's ATS or predictions of an interview. Inspect the parsed fields,
+requirement evidence, and warnings before editing. Do not add unsupported skills
+or metrics to increase a score. The tool can misinterpret relevance or evidence;
+its claimed matches still need human review.
+
+Reports record the engine/policy versions and reference date. The date defaults
+to today's UTC date because current-role tenure changes over time. To reproduce
+a prior run, set `ATS_REFERENCE_DATE=YYYY-MM-DD` before invoking the command.
+Keep the npm lockfile committed; use `npm ci` for reproducible dependencies.
+
+A separate, non-blocking Actions job analyzes the validated PDF artifacts, tests
+matching against the illustrative posting, and uploads `resume-ats-reports`.
+Scores do not fail a build, and ATS job failures do not block PDF publishing.
+Actual extraction errors still return a nonzero exit status locally. Existing
+PDF validation remains required. Job descriptions and parsed resume text may
+appear in reports; public CI analyzes only the committed example posting.
+
 ## Edit the documents
 
 - `src/content.typ` owns contact details, skills, roles, project achievements,

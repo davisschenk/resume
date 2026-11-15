@@ -24,7 +24,7 @@
 ]
 
 #pagebreak()
-= Engineering & Research Projects
+= Projects
 #project(projects.regression)
 #project(projects.sensor)
 #project(projects.ardupilot)
@@ -32,7 +32,7 @@
 #project(projects.methane)
 #project(projects.coal)
 
-= Technical Publication
+= Publications
 #link(publication.url)[#text(weight: "bold", publication.title)]
 #linebreak()
 #publication.credit

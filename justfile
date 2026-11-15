@@ -11,3 +11,9 @@ check: build
 
 clean:
     rm -rf dist
+
+ats: build
+    node scripts/ats.mjs
+
+match job: build
+    node scripts/ats.mjs {{quote(job)}}

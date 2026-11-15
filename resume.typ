@@ -13,11 +13,12 @@
 #job(experience.drone, selected: (0, 1))
 #job(experience.agriculture, selected: (0,))
 
-= Selected Engineering Projects
+= Projects
 #project(projects.regression)
 #project(projects.ardupilot)
 
-= Education & Certification
-#text(weight: "bold")[#education.degree] · #education.school #h(1fr) #education.graduated
-#linebreak()
+= Certifications
 #certifications.at(0).name · #certifications.at(0).issuer · Issued #certifications.at(0).date
+
+= Education
+#text(weight: "bold")[#education.degree] · #education.school #h(1fr) #education.graduated

@@ -12,7 +12,7 @@
   set heading(numbering: none)
   show heading.where(level: 1): it => block(above: 11pt, below: 6pt)[
     #stack(spacing: 4pt,
-      text(size: 11pt, weight: "bold", fill: navy, tracking: 0.6pt, upper(it.body)),
+      text(size: 11pt, weight: "bold", fill: navy, upper(it.body)),
       line(length: 100%, stroke: 0.4pt + rgb("c7d0d8")),
     )
   ]
@@ -42,11 +42,10 @@
 ]
 
 #let project(record) = block(breakable: false, above: 9pt, below: 4pt)[
-  #text(weight: "bold")[#record.title] #h(1fr) #text(size: 10pt, fill: muted, record.dates)
+  #text(weight: "bold")[#if record.url != none { link(record.url, record.title) } else { record.title }] #h(1fr) #text(size: 10pt, fill: muted, record.dates)
   #linebreak()
   #text(fill: muted)[#record.organization · #record.technology]
   #bullet-list(record.bullets)
-  #if record.url != none { text(size: 10pt, link(record.url)[#if record.url.contains("github.com") { "Source / contribution" } else { "Read more" }]) }
 ]
 
 #let skill-lines(groups) = {

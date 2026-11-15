@@ -1,0 +1,14 @@
+Software Test Automation Engineer
+Illustrative job description for testing this workflow; not a live vacancy.
+
+Requirements:
+- Experience developing automated tests with Python, Pytest, and Playwright.
+- Experience building regression and integration tests.
+- Experience integrating test results with TestRail.
+- Proficiency with Git and Linux.
+- Ability to troubleshoot software issues with engineering teams.
+- Bachelor's degree in Computer Science or a related technical field.
+
+Preferred:
+- Experience with robotics, embedded systems, or UAV flight testing.
+- Experience with continuous integration and CI/CD workflows.
