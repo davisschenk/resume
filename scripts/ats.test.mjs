@@ -10,7 +10,10 @@ const report = async (mode, kind) => JSON.parse(await readFile(join(root, "dist"
 
 for (const [kind, count] of [["resume", 1], ["cv", 5]]) {
   test(`${kind}: parser preserves role progression and separates credentials from projects`, async () => {
-    const { parsed } = await report("ats", kind);
+    const { parsed, rules } = await report("ats", kind);
+    for (const id of ["ats-v2.format.columns", "ats-v2.format.tables"]) {
+      assert.equal(rules.find(rule => rule.id === id)?.passed, true, id);
+    }
     const [current, previous] = parsed.roles;
     assert.equal(current.title, "Flight Test Automation");
     assert.equal(current.employer, "Skydio");
