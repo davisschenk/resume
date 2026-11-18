@@ -114,7 +114,10 @@ over reducing body text below 10 pt. Body text currently uses 11 pt.
 
 The Skydio title progression comes from the supplied LinkedIn screenshot. Earlier
 responsibilities and dated projects come from the updated resume attachment;
-the current automation role deliberately has no inferred responsibilities.
+the automation responsibilities reflect the supplied work summary. Flight checkout
+on master is distinguished from automation development starting in April 2025
+and the dedicated automation focus beginning in February 2026. The current entry
+names the official Flight Test Operator title alongside that functional focus.
 Certification dates are issue dates, not assertions of current validity. The
 LORD/ArduPilot publication is labeled as a technical white paper.
 
