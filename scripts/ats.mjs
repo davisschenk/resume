@@ -13,7 +13,7 @@ const now = new Date(`${date}T00:00:00Z`);
 
 function summary(kind, report) {
   const details = [
-    `## ${kind === "resume" ? "One-page resume" : "Two-page CV"}`,
+    `## ${kind.startsWith("resume") ? "One-page resume" : "Two-page CV"}`,
     "",
     `Readiness: **${report.readinessScore}/100** · Checks passed: ${report.checksPassed}/${report.checksTotal}`,
   ];
@@ -52,7 +52,9 @@ async function main() {
   await mkdir(output, { recursive: true });
   const sections = [`# Resume analysis`, "", disclaimer, "",
     `Engine: ${ENGINE_VERSION} · Reference date: ${date}`, ""];
-  for (const kind of ["resume", "cv"]) {
+  const kinds = ["resume", "cv"];
+  if (process.env.RESUME_THEME_PREVIEWS === "1") kinds.push("resume-grotesk", "cv-grotesk", "resume-brilliant", "cv-brilliant");
+  for (const kind of kinds) {
     const pdf = join(root, "dist", `davis-schenkenberger-${kind}.pdf`);
     const { input, layout, file } = await readResumeFile(pdf);
     const report = check(input, policy, {

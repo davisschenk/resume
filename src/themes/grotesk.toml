@@ -1,0 +1,42 @@
+[personal]
+first_name = "Davis"
+last_name = "Schenkenberger"
+language = "en"
+include_icons = false
+[personal.info]
+location = "Fort Collins, Colorado"
+[personal.info.email]
+link = "mailto:davis.schenkenberger@gmail.com"
+label = "davis.schenkenberger@gmail.com"
+[personal.info.github]
+link = "https://github.com/davisschenk"
+label = "github.com/davisschenk"
+[personal.info.linkedin]
+link = "https://www.linkedin.com/in/davis-schenkenberger-686a02157/"
+label = "LinkedIn"
+[personal.icon]
+linkedin = "linkedin"
+location = "house"
+email = "envelope"
+github = "github"
+[personal.ia]
+inject_ai_prompt = false
+inject_keywords = false
+keywords_list = []
+[layout]
+fill_color = "#f4f1eb"
+paper_size = "us-letter"
+accent_color = "#d4d2cc"
+[layout.text]
+font = "Hanken Grotesk"
+size = "10.5pt"
+[layout.text.color]
+light = "#ededef"
+medium = "#63636a"
+dark = "#303037"
+[language.en]
+subtitle = "Software Development & Test Automation"
+ai_prompt = ""
+cv_document_name = "Resume"
+[import]
+fontawesome = "@preview/fontawesome:0.5.0"

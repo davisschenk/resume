@@ -7,7 +7,7 @@
   set document(title: profile.name + " — " + kind, author: profile.name, date: none)
   set page(paper: "us-letter", margin: (x: 0.6in, y: 0.48in))
   set text(font: "Libertinus Sans", size: 11pt, lang: "en", fill: rgb("202a33"))
-  set par(leading: 0.7em, spacing: 0.5em)
+  set par(leading: 0.5em, spacing: 0.5em)
   set list(indent: 10pt, body-indent: 4pt, spacing: 4pt, tight: false)
   set heading(numbering: none)
   show heading.where(level: 1): it => block(above: 11pt, below: 6pt)[
@@ -34,14 +34,17 @@
   if items.len() > 0 { list(..items) }
 }
 
-#let job(record, selected: none) = block(breakable: false, above: 9pt, below: 4pt)[
-  #text(weight: "bold")[#record.title] #h(1fr) #text(size: 10pt, fill: muted, record.dates)
-  #linebreak()
+#let job(record, selected: none) = block(breakable: false, above: 12pt, below: 5pt)[
+  #grid(columns: (1fr, auto), column-gutter: 12pt, align: (left, right),
+    text(weight: "bold", record.title),
+    text(size: 10pt, fill: muted, record.dates),
+  )
+  #v(2pt)
   #text(fill: navy, record.organization)
   #bullet-list(if selected == none { record.bullets } else { selected.map(i => record.bullets.at(i)) })
 ]
 
-#let project(record) = block(breakable: false, above: 9pt, below: 4pt)[
+#let project(record) = block(breakable: false, above: 12pt, below: 5pt)[
   #text(weight: "bold")[#if record.url != none { link(record.url, record.title) } else { record.title }] #h(1fr) #text(size: 10pt, fill: muted, record.dates)
   #linebreak()
   #text(fill: muted)[#record.organization · #record.technology]

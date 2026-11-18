@@ -9,23 +9,26 @@
 
 #let skills = (
   (label: "Software", text: "Python, Rust, C++, Java, Git, Bash, Linux"),
-  (label: "Testing", text: "Pytest, Playwright, Selenium, TestRail API, Page Object Model"),
-  (label: "Data & systems", text: "Pandas, Polars, NumPy, GeoPandas, ArcPy, ArduPilot, MAVLink"),
+  (label: "Testing", text: "Pytest, Appium, Playwright, TestRail, Buildkite, HIL"),
+  (label: "Data & systems", text: "Databricks, Ansible, Pandas, Polars, ArcPy, ArduPilot, MAVLink"),
 )
 
 #let experience = (
   automation: (
     title: "Flight Test Automation", organization: "Skydio",
     dates: "February 2026–Present", location: "Fort Collins, Colorado",
-    bullets: (),
+    bullets: (
+      "Build controller app tests with Python, Pytest, and Appium across simulation, HIL benches, and real vehicles.",
+      "Maintain CI suites, hardware provisioning, failure recovery, and diagnostics; report results to TestRail and Databricks.",
+      "Develop test orchestration, shared HIL infrastructure, and agent-assisted tools; review test PRs as a codeowner.",
+    ),
   ),
   operator: (
     title: "Flight Test Operator", organization: "Skydio",
     dates: "January 2025–February 2026", location: "Fort Collins, Colorado",
     bullets: (
-      "Designed automated test workflows with Pytest and Playwright to reduce manual testing workload.",
-      "Developed internal tools to support flight safety, airspace deconfliction, and operator efficiency.",
-      "Executed recurring smoke and sanity tests; collaborated with engineers to document and troubleshoot system bugs.",
+      "Ran flight checkout on master: smoke and sanity tests, flight operations, and bug investigation with engineers.",
+      "Began writing inspection and mapping automation in April 2025 using Python, Pytest, and Playwright.",
       "Conducted flight operations in accordance with FAA regulations and internal safety protocols.",
     ),
   ),

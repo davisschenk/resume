@@ -9,7 +9,7 @@
 
 = Experience
 #job(experience.automation)
-#job(experience.operator, selected: (0, 1, 2))
+#job(experience.operator, selected: (0, 1))
 #job(experience.drone, selected: (0, 1))
 #job(experience.agriculture, selected: (0,))
 

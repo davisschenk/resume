@@ -18,7 +18,11 @@ def main():
         sys.exit(f"Expected Typst {expected}, found {actual}.")
     output = ROOT / "dist"
     output.mkdir(exist_ok=True)
-    for source, name in (("resume", "resume"), ("cv", "cv")):
+    sources = ("resume", "cv")
+    if "--themes" in sys.argv:
+        sources += ("resume-grotesk", "cv-grotesk", "resume-brilliant", "cv-brilliant")
+    for source in sources:
+        name = source
         subprocess.run(
             [compiler, "compile", "--root", str(ROOT), "--ignore-system-fonts",
              "--font-path", str(ROOT / "fonts"), str(ROOT / f"{source}.typ"),
