@@ -31,7 +31,7 @@ def main():
                 "Davis Schenkenberger", "Flight Test Automation", "February 2026-Present",
                 "Flight Test Operator", "January 2025-February 2026", "Playwright", "Pytest",
                 "TestRail", "Appium", "Databricks", "checkout on master", "April 2025",
-                "official title: Flight Test Operator", "Computer Science", "December 2024", "ArduPilot",
+                "Official title: Flight Test Operator", "Computer Science", "December 2024", "ArduPilot",
             )
             for phrase in expected:
                 require(phrase in text, f"{kind}: missing {phrase!r}")

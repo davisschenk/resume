@@ -15,10 +15,10 @@
 
 #let experience = (
   automation: (
-    title: "Flight Test Automation", organization: "Skydio (official title: Flight Test Operator)",
+    title: "Flight Test Automation", organization: "Skydio",
     dates: "February 2026–Present", location: "Fort Collins, Colorado",
     bullets: (
-      "Build Python, Pytest, and Appium automation for controller workflows across simulation, hardware-in-the-loop (HIL), and real vehicles.",
+      "Official title: Flight Test Operator. Build Python, Pytest, and Appium automation for controller workflows across simulation, hardware-in-the-loop (HIL), and real vehicles.",
       "Maintain CI suites, hardware provisioning, recovery, and diagnostics; report results to TestRail and Databricks.",
       "Develop test orchestration and shared HIL infrastructure; review test PRs as a codeowner and build agent-assisted testing tools.",
     ),
