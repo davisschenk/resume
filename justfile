@@ -17,3 +17,8 @@ ats: build
 
 match job: build
     node scripts/ats.mjs {{quote(job)}}
+
+preview-themes:
+    python3 scripts/build.py --themes
+    python3 scripts/check.py --themes
+    RESUME_THEME_PREVIEWS=1 npm run ats

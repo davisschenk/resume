@@ -140,3 +140,24 @@ are pinned in `scripts/requirements.txt`.
 Libertinus Sans 7.051 (regular, bold, italic) is bundled in `fonts/` under the
 [SIL Open Font License](fonts/OFL.txt). Builds ignore system fonts and use no
 external Typst packages. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
+## Template comparison drafts
+
+Run `just preview-themes` to generate Grotesk and Brilliant versions of both
+documents from the same shared content. The four PDFs use `-grotesk` and
+`-brilliant` filename suffixes in `dist/`, with rendered page previews beside
+them. The normal build and published resume/CV remain unchanged while choosing
+a design. All comparisons keep one-page resumes, two-page CVs, US Letter paper,
+and text at least 10 pt.
+
+Grotesk uses the upstream warm background, Hanken Grotesk typography, two-column
+experience/sidebar layout and skill tags. Brilliant uses Source Sans 3 and Roboto
+with single-column entries; `title_highlight = "none"` removes the partial-word
+section heading accent. Font files and upstream template sources are bundled;
+pinned Font Awesome packages are fetched by Typst on the first compilation.
+
+The comparison analysis includes independent PDF text extraction. Grotesk's
+columns can interleave fields in that parser, so its role and credential parsing
+is not as reliable as the single-column document. Treat these as visual drafts
+until a final template is selected; the existing parser regression tests still
+apply to the default resume and CV. No hidden text is enabled.

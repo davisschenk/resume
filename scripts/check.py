@@ -22,7 +22,11 @@ def normalize(text):
 
 
 def main():
-    for kind, pages in (("resume", 1), ("cv", 2)):
+    documents = (("resume", 1), ("cv", 2))
+    if "--themes" in sys.argv:
+        documents += (("resume-grotesk", 1), ("cv-grotesk", 2),
+                      ("resume-brilliant", 1), ("cv-brilliant", 2))
+    for kind, pages in documents:
         path = ROOT / "dist" / f"davis-schenkenberger-{kind}.pdf"
         with pymupdf.open(path) as doc:
             require(len(doc) == pages, f"{kind}: expected {pages} pages, got {len(doc)}")
@@ -63,7 +67,7 @@ def main():
                                     f"{kind}: text extends beyond page")
                 image_path = ROOT / "dist" / f"{kind}-page-{page.number + 1}.png"
                 page.get_pixmap(matrix=pymupdf.Matrix(1.5, 1.5)).save(image_path)
-            if kind == "cv":
+            if kind.startswith("cv"):
                 for phrase in ("Wingtra GEN II Trainer", "Wingtra GEN II Basic & Advanced Operator",
                                "Technical white paper", "GIS Analyst", "Networked Connect Four"):
                     require(phrase in text, f"cv: missing {phrase!r}")
