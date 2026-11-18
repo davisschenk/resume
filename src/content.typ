@@ -18,16 +18,16 @@
     title: "Flight Test Automation", organization: "Skydio",
     dates: "February 2026–Present", location: "Fort Collins, Colorado",
     bullets: (
-      "Official title: Flight Test Operator. Build Python, Pytest, and Appium automation for controller workflows across simulation, hardware-in-the-loop (HIL), and real vehicles.",
-      "Maintain CI suites, hardware provisioning, recovery, and diagnostics; report results to TestRail and Databricks.",
-      "Develop test orchestration and shared HIL infrastructure; review test PRs as a codeowner and build agent-assisted testing tools.",
+      "Build controller app tests with Python, Pytest, and Appium across simulation, HIL benches, and real vehicles.",
+      "Maintain CI suites, hardware provisioning, failure recovery, and diagnostics; report results to TestRail and Databricks.",
+      "Develop test orchestration, shared HIL infrastructure, and agent-assisted tools; review test PRs as a codeowner.",
     ),
   ),
   operator: (
     title: "Flight Test Operator", organization: "Skydio",
     dates: "January 2025–February 2026", location: "Fort Collins, Colorado",
     bullets: (
-      "Ran flight checkout on master, executing smoke and sanity tests and investigating software bugs with engineers.",
+      "Ran flight checkout on master: smoke and sanity tests, flight operations, and bug investigation with engineers.",
       "Began writing inspection and mapping automation in April 2025 using Python, Pytest, and Playwright.",
       "Conducted flight operations in accordance with FAA regulations and internal safety protocols.",
     ),

@@ -116,8 +116,7 @@ The Skydio title progression comes from the supplied LinkedIn screenshot. Earlie
 responsibilities and dated projects come from the updated resume attachment;
 the automation responsibilities reflect the supplied work summary. Flight checkout
 on master is distinguished from automation development starting in April 2025
-and the dedicated automation focus beginning in February 2026. The current entry
-names the official Flight Test Operator title alongside that functional focus.
+and the dedicated automation focus beginning in February 2026.
 Certification dates are issue dates, not assertions of current validity. The
 LORD/ArduPilot publication is labeled as a technical white paper.
 

@@ -15,6 +15,7 @@
 #job(experience.agriculture)
 #job(experience.gis)
 
+#pagebreak()
 = Education
 #text(weight: "bold")[#education.degree] · #education.school #h(1fr) #education.dates
 
@@ -23,7 +24,6 @@
   #text(weight: "bold")[#cert.name] · #cert.issuer #h(1fr) Issued #cert.date #linebreak()
 ]
 
-#pagebreak()
 = Projects
 #project(projects.regression)
 #project(projects.sensor)
